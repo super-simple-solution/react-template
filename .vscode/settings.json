@@ -2,7 +2,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
   },
-  "[vue]": {
+  "[tsx]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {

@@ -6,7 +6,6 @@
     "moduleResolution": "node",
     "noImplicitThis": false,
     "strict": true,
-    "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
     "allowJs": true,
@@ -15,10 +14,8 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "types": ["vite/client"],
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -26,18 +23,11 @@
       ]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "auto-imports.d.ts",
-  ],
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "dist"
   ],
-  "types": ["vue", "vue-router", "pinia", "vite-plugin-svg-icons/client", "element-plus/global"],
   "typeRoots": [
     "./node_modules/@types",
     "./src/types/",

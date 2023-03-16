@@ -1,16 +1,10 @@
 import { defineConfig } from 'vite'
 import path from 'path'
-import vue from '@vitejs/plugin-vue'
+import react from '@vitejs/plugin-react'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
-import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import tailwind from 'tailwindcss'
-import autoprefixer from 'autoprefixer'
-import eslintPlugin from 'vite-plugin-eslint'
-import vueJsx from '@vitejs/plugin-vue-jsx'
 
 const pathUrl = 'https://xxx.com'
 
@@ -36,13 +30,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    vue(),
-    vueJsx(),
-    Components({
-      dts: true,
-      dirs: ['src/components'],
-      resolvers: [ElementPlusResolver({ importStyle: 'sass' }), IconsResolver({ enabledCollections: ['ep'] })],
-    }),
+    react(),
     Icons({ autoInstall: true }),
     createSvgIconsPlugin({
       // Specify the icon folder to be cached
@@ -50,25 +38,21 @@ export default defineConfig({
       // Specify symbolId format
       symbolId: 'icon-[dir]-[name]',
     }),
-    eslintPlugin(),
     AutoImport({
       // targets to transform
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-        /\.vue$/,
-        /\.vue\?vue/, // .vue
         /\.md$/, // .md
         /\.json$/, // .json
       ],
       // global imports to register
-      imports: ['vue'],
+      imports: ['react'],
       eslintrc: {
         enabled: true, // Default `false`
         filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
         globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
       resolvers: [
-        ElementPlusResolver(),
         // Auto import icon components
         // 自动导入图标组件
         IconsResolver({ prefix: 'Icon' }),
@@ -76,9 +60,4 @@ export default defineConfig({
       dts: './auto-imports.d.ts',
     }),
   ],
-  css: {
-    postcss: {
-      plugins: [tailwind(), autoprefixer()],
-    },
-  },
 })
