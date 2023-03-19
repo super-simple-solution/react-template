@@ -1,11 +1,19 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 import Home from '@/components/Home'
+import About from '@/components/About'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-])
+const App = () => {
+  const routes = useRoutes([
+    {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: 'about',
+      element: <About />,
+    },
+  ])
+  return routes
+}
 
-export default router
+export default App
