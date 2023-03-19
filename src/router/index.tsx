@@ -1,8 +1,8 @@
 import { lazy, ReactNode, Suspense } from 'react'
 import { RouteObject } from 'react-router-dom'
 
-const Home = lazy(() => import('../pages/Home'))
-const About = lazy(() => import('../pages/About'))
+const Home = lazy(() => import('../pages/home'))
+const About = lazy(() => import('../pages/about'))
 
 import AppLayout from '../layout/index'
 
