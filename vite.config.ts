@@ -5,6 +5,7 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import vitePluginImp from 'vite-plugin-imp'
 
 const pathUrl = 'https://xxx.com'
 
@@ -32,6 +33,14 @@ export default defineConfig({
   plugins: [
     react(),
     Icons({ autoInstall: true }),
+    vitePluginImp({
+      libList: [
+        {
+          libName: 'antd',
+          style: (name) => `antd/es/${name}/style`,
+        },
+      ],
+    }),
     createSvgIconsPlugin({
       // Specify the icon folder to be cached
       iconDirs: [path.resolve(process.cwd(), 'src/icons')],
