@@ -1,5 +1,7 @@
+import { Button } from '@chakra-ui/react'
+
 function Home() {
-  return <div className="Home text-center text-red-500">Home</div>
+  return <Button colorScheme="blue">Button</Button>
 }
 
 export default Home

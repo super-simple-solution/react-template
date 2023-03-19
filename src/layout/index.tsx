@@ -1,15 +1,14 @@
-import { Layout, Menu } from 'antd'
+import { Menu, MenuList, MenuItem } from '@chakra-ui/react'
+import { Grid, GridItem } from '@chakra-ui/react'
+import { Hide } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { Link, matchRoutes, Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { routers } from '../router'
-
-const { SubMenu } = Menu
-const { Header, Content, Sider } = Layout
+import { useColorMode } from '@chakra-ui/color-mode'
 
 export default function AppLayout() {
   const location = useLocation()
-  const [defaultSelectedKeys, setDefaultSelectedKeys] = useState<string[]>([])
-  const [defaultOpenKeys, setDefaultOpenKeys] = useState<string[]>([])
   const [isInit, setIsInit] = useState<Boolean>(false)
 
   useEffect(() => {
@@ -23,60 +22,72 @@ export default function AppLayout() {
         }
       })
     }
-    setDefaultSelectedKeys(pathArr)
-    setDefaultOpenKeys(pathArr)
     setIsInit(true)
   }, [location.pathname])
   if (!isInit) {
     return null
   }
+
+  function Toggle() {
+    const { colorMode, toggleColorMode } = useColorMode()
+    return (
+      <header>
+        <Button onClick={toggleColorMode}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</Button>
+      </header>
+    )
+  }
+
   return (
     <>
-      <Layout>
-        <Header className="header">
+      <Grid
+        templateAreas={'"header header" "nav main"'}
+        gridTemplateRows={'50px 1fr 30px'}
+        gridTemplateColumns={'150px 1fr'}
+        h="200px"
+        gap="1"
+        color="blackAlpha.700"
+        fontWeight="bold"
+      >
+        <GridItem pl="2" bg="orange.300" area={'header'}>
           <div className="logo" />
-
-          <Menu theme="dark" mode="horizontal">
-            <Menu.Item key="/">
-              <Link to="/">用户信息</Link>
-            </Menu.Item>
-            <Menu.Item key="/about">
-              <Link to="/about">用户信息</Link>
-            </Menu.Item>
+          <Toggle></Toggle>
+          <Menu>
+            <MenuList>
+              <MenuItem>
+                <Link to="/">用户信息</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/about">用户信息</Link>
+              </MenuItem>
+              <MenuItem>Mark as Draft</MenuItem>
+              <MenuItem>Delete</MenuItem>
+              <MenuItem>Attend a Workshop</MenuItem>
+            </MenuList>
           </Menu>
-        </Header>
-        <Layout>
-          <Sider width={200} className="site-layout-background">
-            <Menu
-              mode="inline"
-              defaultSelectedKeys={defaultSelectedKeys}
-              defaultOpenKeys={defaultOpenKeys}
-              style={{ height: '100%', borderRight: 0 }}
-            >
-              <SubMenu key="/" title="用户管理">
-                <Menu.Item key="/">
-                  <Link to="/">用户信息</Link>
-                </Menu.Item>
-                <Menu.Item key="/about">
-                  <Link to="/about">用户信息</Link>
-                </Menu.Item>
-              </SubMenu>
-            </Menu>
-          </Sider>
-          <Layout style={{ padding: '0 24px 24px' }}>
-            <Content
-              className="site-layout-background"
-              style={{
-                padding: 24,
-                margin: 0,
-                minHeight: 280,
-              }}
-            >
-              <Outlet />
-            </Content>
-          </Layout>
-        </Layout>
-      </Layout>
+        </GridItem>
+        <Hide below="md">
+          <GridItem pl="2" bg="pink.300" area={'nav'}>
+            <div className="site-layout-background">
+              <Menu>
+                <MenuList>
+                  <MenuItem>
+                    <Link to="/">用户信息</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to="/about">用户信息</Link>
+                  </MenuItem>
+                  <MenuItem>Mark as Draft</MenuItem>
+                  <MenuItem>Delete</MenuItem>
+                  <MenuItem>Attend a Workshop</MenuItem>
+                </MenuList>
+              </Menu>
+            </div>
+          </GridItem>
+        </Hide>
+        <GridItem pl="2" bg="green.300" area={'main'}>
+          <Outlet />
+        </GridItem>
+      </Grid>
     </>
   )
 }
