@@ -63,6 +63,7 @@ export default function AppLayout() {
         </GridItem>
         <Hide below="md">
           <GridItem pl="2" bg="pink.300" area={'nav'}>
+            <Button variant="primary">Button</Button>
             <div className="site-layout-background">
               <Menu>
                 <MenuList>
