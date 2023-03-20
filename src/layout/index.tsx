@@ -3,6 +3,7 @@ import { useColorMode } from '@chakra-ui/color-mode'
 import { Link, matchRoutes, Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { routers } from '../router'
+import Header from './component/Header'
 
 export default function AppLayout() {
   const location = useLocation()
@@ -41,7 +42,7 @@ export default function AppLayout() {
         fontWeight="bold"
       >
         <GridItem pl="2" area={'header'}>
-          <div className="logo" />
+          {/* <div className="logo" />
           <div className="flex">
             <div>
               <Link to="/">Home</Link>
@@ -57,7 +58,8 @@ export default function AppLayout() {
               </MenuList>
             </Menu>
             <Toggle></Toggle>
-          </div>
+          </div> */}
+          <Header></Header>
         </GridItem>
         <Hide below="md">
           <GridItem pl="2" bg="pink.300" area={'nav'}>
