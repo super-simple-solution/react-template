@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react'
 import { useMetaMask } from 'metamask-react'
 
-function App() {
+function ConnectButton() {
   const { status, connect, account, chainId } = useMetaMask()
   if (status === 'initializing') return <div>Synchronisation with MetaMask ongoing...</div>
   if (status === 'unavailable') return <div>MetaMask not available :(</div>
@@ -19,7 +19,7 @@ function App() {
 function Home() {
   return (
     <>
-      <App></App>
+      <ConnectButton></ConnectButton>
       <Button colorScheme="blue">Button</Button>
     </>
   )
