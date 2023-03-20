@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from './Button'
+import { Button } from '@chakra-ui/react'
 import './header.css'
 
 type User = {
@@ -33,12 +33,18 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <Button size="small" onClick={onLogout}>
+              Log out
+            </Button>
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <Button size="small" onClick={onLogin}>
+              Log in
+            </Button>
+            <Button colorScheme="blue" size="small" onClick={onCreateAccount}>
+              Sign up
+            </Button>
           </>
         )}
       </div>
