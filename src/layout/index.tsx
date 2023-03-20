@@ -1,4 +1,7 @@
-import { Menu, MenuList, MenuItem, Grid, GridItem, Hide, Button } from '@chakra-ui/react'
+import { Menu, MenuList, MenuItem, MenuButton } from '@chakra-ui/react'
+import { Grid, GridItem } from '@chakra-ui/react'
+import { Hide } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { Link, matchRoutes, Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { routers } from '../router'
@@ -47,20 +50,22 @@ export default function AppLayout() {
       >
         <GridItem pl="2" bg="orange.300" area={'header'}>
           <div className="logo" />
-          <Toggle></Toggle>
-          <Menu>
-            <MenuList>
-              <MenuItem>
-                <Link to="/">用户信息</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/about">用户信息</Link>
-              </MenuItem>
-              <MenuItem>Mark as Draft</MenuItem>
-              <MenuItem>Delete</MenuItem>
-              <MenuItem>Attend a Workshop</MenuItem>
-            </MenuList>
-          </Menu>
+          <div className="flex">
+            <div>
+              <Link to="/">Home</Link>
+            </div>
+            <Menu>
+              <MenuButton as={Button}>
+                <Link to="/about">About</Link>
+              </MenuButton>
+              <MenuList>
+                <MenuItem>
+                  <Link to="/about">用户信息</Link>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+            <Toggle></Toggle>
+          </div>
         </GridItem>
         <Hide below="md">
           <GridItem pl="2" bg="pink.300" area={'nav'}>
