@@ -19,9 +19,12 @@
     "ethers": "^6.1.0",
     "framer-motion": "^10.6.0",
     "lodash.debounce": "^4.0.8",
+    "metamask-react": "^2.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.9.0"
+    "react-router-dom": "^6.9.0",
+    "web3": "^1.8.2",
+    "web3modal": "^1.9.12"
   },
   "devDependencies": {
     "@tanstack/react-query-devtools": "^4.26.1",

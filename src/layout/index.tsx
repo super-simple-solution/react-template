@@ -1,11 +1,8 @@
-import { Menu, MenuList, MenuItem, MenuButton } from '@chakra-ui/react'
-import { Grid, GridItem } from '@chakra-ui/react'
-import { Hide } from '@chakra-ui/react'
-import { Button } from '@chakra-ui/react'
+import { Menu, MenuList, MenuItem, MenuButton, Grid, GridItem, Hide, Button } from '@chakra-ui/react'
+import { useColorMode } from '@chakra-ui/color-mode'
 import { Link, matchRoutes, Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { routers } from '../router'
-import { useColorMode } from '@chakra-ui/color-mode'
 
 export default function AppLayout() {
   const location = useLocation()
@@ -30,11 +27,7 @@ export default function AppLayout() {
 
   function Toggle() {
     const { colorMode, toggleColorMode } = useColorMode()
-    return (
-      <header>
-        <Button onClick={toggleColorMode}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</Button>
-      </header>
-    )
+    return <Button onClick={toggleColorMode}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</Button>
   }
 
   return (
@@ -48,7 +41,7 @@ export default function AppLayout() {
         color="blackAlpha.700"
         fontWeight="bold"
       >
-        <GridItem pl="2" bg="orange.300" area={'header'}>
+        <GridItem pl="2" area={'header'}>
           <div className="logo" />
           <div className="flex">
             <div>
