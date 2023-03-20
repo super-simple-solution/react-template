@@ -8,6 +8,7 @@ module.exports = {
   plugins: ['react', 'prettier'],
   extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier', './.eslintrc-auto-import.json'],
   rules: {
+    'no-unused-vars': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],

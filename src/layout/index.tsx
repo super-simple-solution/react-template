@@ -1,7 +1,4 @@
-import { Menu, MenuList, MenuItem } from '@chakra-ui/react'
-import { Grid, GridItem } from '@chakra-ui/react'
-import { Hide } from '@chakra-ui/react'
-import { Button } from '@chakra-ui/react'
+import { Menu, MenuList, MenuItem, Grid, GridItem, Hide, Button } from '@chakra-ui/react'
 import { Link, matchRoutes, Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { routers } from '../router'
