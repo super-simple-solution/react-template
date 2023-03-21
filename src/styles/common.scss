@@ -37,6 +37,9 @@
   .text-base-medium { 
     @apply text-base font-medium;
   }
+  .text-base-semibold { 
+    @apply text-base font-semibold;
+  }
   .text-2xl-normal { // 24
     @apply text-2xl font-normal;
   }

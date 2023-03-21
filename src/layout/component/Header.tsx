@@ -6,17 +6,17 @@ function Header() {
   return (
     <>
       <div className="header flex-x-between flex-y-center w-screen">
-        <div className="cursor-pointer">
+        <div className="text-base-semibold cursor-pointer">
           <Link to="/">SingularDAO</Link>
         </div>
         <div className="flex-xy-center">
-          <div className="mr-80 cursor-pointer">
+          <div className="nav-item text-sm-medium mr-80">
             <Link to="/market">Market</Link>
           </div>
-          <div className="mr-80 cursor-pointer">DashBoard</div>
-          <div className="cursor-pointer">AirDrop</div>
+          <div className="nav-item text-sm-medium mr-80">DashBoard</div>
+          <div className="nav-item text-sm-medium">AirDrop</div>
         </div>
-        <Button className="connect-btn" variant="primary">
+        <Button className="connect-btn bg-gradient" variant="primary">
           Connect Wallet
         </Button>
       </div>

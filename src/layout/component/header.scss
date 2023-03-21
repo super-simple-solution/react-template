@@ -2,5 +2,16 @@
 .header {
   height: 60px;
   padding:  0 24px;
-  border-bottom: 1px solid mode("red", "yellow")(props);
+  border-bottom: 1px solid;
+  border-color: var(--color-neutral-300);
+}
+[data-theme="dark"] .header {
+  border-color: var(--color-neutral-800);
+}
+
+.nav-item {
+  @apply cursor-pointer;
+}
+.connect-btn {
+  color: var(--color-neutral-900);
 }

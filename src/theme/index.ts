@@ -4,19 +4,25 @@ import { mode } from '@chakra-ui/theme-tools'
 import { brandRing } from './config'
 
 const theme = extendTheme({
-  initialColorMode: 'dark',
-  useSystemColorMode: true,
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: true,
+  },
   colors: {
+    yellow: { DEFAULT: 'var(--color-yellow)' },
+    purple: { DEFAULT: 'var(--color-purple)' },
     primary: {
+      400: 'var(--color-primary-400)',
       500: 'var(--color-primary-500)',
       600: 'var(--color-primary-600)',
+      700: 'var(--color-primary-700)',
     },
     neutral: {
-      900: '--color-neutral-900',
-      800: '--color-neutral-800',
-      500: '--color-neutral-500',
-      300: '--color-neutral-300',
-      200: '--color-neutral-200',
+      900: 'var(--color-neutral-900)',
+      800: 'var(--color-neutral-800)',
+      500: 'var(--color-neutral-500)',
+      300: 'var(--color-neutral-300)',
+      200: 'var(--color-neutral-200)',
     },
   },
   styles: {
@@ -28,16 +34,6 @@ const theme = extendTheme({
         primary: (props: Record<string, any>) => ({
           rounded: '20px',
           ...brandRing,
-          color: mode('white', 'gray.800')(props),
-          backgroundColor: mode('brand.500', 'brand.200')(props),
-
-          _hover: {
-            backgroundColor: mode('brand.600', 'brand.300')(props),
-          },
-
-          _active: {
-            backgroundColor: mode('brand.700', 'brand.400')(props),
-          },
         }),
       },
     },
