@@ -1,4 +1,5 @@
 import './header.scss'
+import { Button } from '@chakra-ui/react'
 
 function Header() {
   return (
@@ -10,7 +11,9 @@ function Header() {
           <div className="mr-80">Dashboard</div>
           <div>AirDrop</div>
         </div>
-        <div className="connect-btn">Connect Wallet</div>
+        <Button className="connect-btn" variant="primary">
+          Connect Wallet
+        </Button>
       </div>
     </>
   )

@@ -1,13 +1,7 @@
 // https://github.com/nikolovlazar/egghead-getting-started-with-chakra-ui/blob/lesson-9/src/theme/index.ts
 import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
-
-const brandRing = {
-  _focus: {
-    ring: 2,
-    ringColor: 'brand.500',
-  },
-}
+import { brandRing } from './config'
 
 const theme = extendTheme({
   initialColorMode: 'dark',
