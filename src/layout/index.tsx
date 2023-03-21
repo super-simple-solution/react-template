@@ -6,29 +6,29 @@ import { routers } from '../router'
 import Header from './component/Header'
 
 export default function AppLayout() {
-  const location = useLocation()
-  const [isInit, setIsInit] = useState<Boolean>(false)
-  useEffect(() => {
-    const routes = matchRoutes(routers, location.pathname) // 返回匹配到的路由数组对象，每一个对象都是一个路由对象
-    const pathArr: string[] = []
-    if (routes !== null) {
-      routes.forEach((item) => {
-        const path = item.route.path
-        if (path) {
-          pathArr.push(path)
-        }
-      })
-    }
-    setIsInit(true)
-  }, [location.pathname])
-  if (!isInit) {
-    return null
-  }
+  // const location = useLocation()
+  // const [isInit, setIsInit] = useState<Boolean>(false)
+  // useEffect(() => {
+  //   const routes = matchRoutes(routers, location.pathname) // 返回匹配到的路由数组对象，每一个对象都是一个路由对象
+  //   const pathArr: string[] = []
+  //   if (routes !== null) {
+  //     routes.forEach((item) => {
+  //       const path = item.route.path
+  //       if (path) {
+  //         pathArr.push(path)
+  //       }
+  //     })
+  //   }
+  //   setIsInit(true)
+  // }, [location.pathname])
+  // if (!isInit) {
+  //   return null
+  // }
 
   const { colorMode, toggleColorMode } = useColorMode()
-  function Toggle() {
-    return <Button onClick={toggleColorMode}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</Button>
-  }
+  // function Toggle() {
+  //   return <Button onClick={toggleColorMode}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</Button>
+  // }
 
   return (
     <>

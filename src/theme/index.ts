@@ -7,24 +7,26 @@ const theme = extendTheme({
   initialColorMode: 'dark',
   useSystemColorMode: true,
   colors: {
-    brand: {
-      50: '#f5fee5',
-      100: '#e1fbb2',
-      200: '#cdf781',
-      300: '#b8ee56',
-      400: '#a2e032',
-      500: '#8ac919',
-      600: '#71ab09',
-      700: '#578602',
-      800: '#3c5e00',
-      900: '#203300',
+    primary: {
+      500: 'var(--color-primary-500)',
+      600: 'var(--color-primary-600)',
     },
+    neutral: {
+      900: '--color-neutral-900',
+      800: '--color-neutral-800',
+      500: '--color-neutral-500',
+      300: '--color-neutral-300',
+      200: '--color-neutral-200',
+    },
+  },
+  styles: {
+    global: (props: { colorMode: string }) => ({}),
   },
   components: {
     Button: {
       variants: {
         primary: (props: Record<string, any>) => ({
-          rounded: 'none',
+          rounded: '20px',
           ...brandRing,
           color: mode('white', 'gray.800')(props),
           backgroundColor: mode('brand.500', 'brand.200')(props),

@@ -1,3 +1,4 @@
+import Market from '@/pages/market'
 import { lazy, ReactNode, Suspense } from 'react'
 import { RouteObject } from 'react-router-dom'
 
@@ -22,6 +23,10 @@ export const routers: RouteObject[] = [
       {
         path: '/about',
         element: lazyLoad(<About />),
+      },
+      {
+        path: '/market',
+        element: lazyLoad(<Market />),
       },
     ],
   },
