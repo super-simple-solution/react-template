@@ -13,5 +13,6 @@
   @apply cursor-pointer;
 }
 .connect-btn {
+  @apply overflow-hidden px-14;
   color: var(--color-neutral-900);
 }

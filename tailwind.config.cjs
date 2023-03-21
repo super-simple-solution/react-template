@@ -33,7 +33,9 @@ module.exports = {
         number: ['DIN Alternate'],
       },
       spacing: {
+        14: '14px',
         16: '16px',
+        24: '24px',
         80: '80px',
       },
     },

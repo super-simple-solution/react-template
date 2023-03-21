@@ -1,8 +1,15 @@
 import './header.scss'
-import { Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import ConnectButton from './ConnectButton'
+import { Button } from '@chakra-ui/react'
+import { useColorMode } from '@chakra-ui/color-mode'
 
 function Header() {
+  const { colorMode, toggleColorMode } = useColorMode()
+  function Toggle() {
+    return <Button onClick={toggleColorMode}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</Button>
+  }
+
   return (
     <>
       <div className="header flex-x-between flex-y-center w-screen">
@@ -16,9 +23,8 @@ function Header() {
           <div className="nav-item text-sm-medium mr-80">DashBoard</div>
           <div className="nav-item text-sm-medium">AirDrop</div>
         </div>
-        <Button className="connect-btn bg-gradient" variant="primary">
-          Connect Wallet
-        </Button>
+        <Toggle></Toggle>
+        <ConnectButton />
       </div>
     </>
   )

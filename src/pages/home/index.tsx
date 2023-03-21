@@ -1,26 +1,13 @@
-import { Button } from '@chakra-ui/react'
-import { useMetaMask } from 'metamask-react'
-
-function ConnectButton() {
-  const { status, connect, account, chainId } = useMetaMask()
-  if (status === 'initializing') return <div>Synchronisation with MetaMask ongoing...</div>
-  if (status === 'unavailable') return <div>MetaMask not available :(</div>
-  if (status === 'notConnected') return <button onClick={connect}>Connect to MetaMask</button>
-  if (status === 'connecting') return <div>Connecting...</div>
-  if (status === 'connected')
-    return (
-      <div>
-        Connected account {account} on chain ID {chainId}
-      </div>
-    )
-  return null
-}
-
+import CardItem from './component/Card'
+const numbers = [1, 2, 3, 4]
 function Home() {
   return (
     <>
-      <ConnectButton></ConnectButton>
-      <Button colorScheme="blue">Button</Button>
+      <div className="flex-x-between gap-x-16">
+        {numbers.map((item, index) => (
+          <CardItem key={index} info={item} />
+        ))}
+      </div>
     </>
   )
 }
