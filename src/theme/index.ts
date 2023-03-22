@@ -1,7 +1,7 @@
 // https://github.com/nikolovlazar/egghead-getting-started-with-chakra-ui/blob/lesson-9/src/theme/index.ts
 import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
-import { brandRing } from './config'
+import { brandRing, borderRadius } from './config'
 
 const theme = extendTheme({
   config: {
@@ -19,12 +19,13 @@ const theme = extendTheme({
     },
     neutral: {
       900: 'var(--color-neutral-900)',
-      800: 'var(--color-neutral-800)',
+      800: 'var(--color-neutral-700)',
       500: 'var(--color-neutral-500)',
       300: 'var(--color-neutral-300)',
       200: 'var(--color-neutral-200)',
     },
   },
+  ...borderRadius,
   styles: {
     global: (props: { colorMode: string }) => ({}),
   },
@@ -35,6 +36,11 @@ const theme = extendTheme({
           rounded: '20px',
           ...brandRing,
         }),
+      },
+    },
+    Card: {
+      baseStyle: {
+        borderRadius: '2xl',
       },
     },
   },

@@ -14,7 +14,7 @@ module.exports = {
         },
         neutral: {
           900: 'var(--color-neutral-900)',
-          800: 'var(--color-neutral-800)',
+          800: 'var(--color-neutral-700)',
           500: 'var(--color-neutral-500)',
           300: 'var(--color-neutral-300)',
           200: 'var(--color-neutral-200)',
@@ -33,9 +33,12 @@ module.exports = {
         number: ['DIN Alternate'],
       },
       spacing: {
+        6: '6px',
         14: '14px',
         16: '16px',
         24: '24px',
+        32: '32px',
+        40: '40px',
         80: '80px',
       },
     },

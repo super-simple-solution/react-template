@@ -1,14 +1,19 @@
-import { Card, CardHeader, CardBody, Heading, StackDivider, Text, Stack, Box } from '@chakra-ui/react'
-import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react'
+import { Card, CardHeader, CardBody, Image } from '@chakra-ui/react'
 
 function CardItem({ info }: any) {
   return (
-    <Card>
+    <Card borderRadius="2xl" boxShadow="none">
       <CardHeader>
-        <Heading size="md"> {info}</Heading>
+        <div className={`flex-xy-center h-40 w-40 rounded-full ${info.class_name}`}>
+          <Image boxSize="16px" src={info.img} />
+        </div>
       </CardHeader>
       <CardBody>
-        <Text>View a summary of all your customers over the last month.</Text>
+        <div className="text-sm-normal">{info.text}</div>
+        <div className="number-4xl mt-6 flex">
+          <div>{info.value}</div>
+          <div>{info.unit}</div>
+        </div>
       </CardBody>
     </Card>
   )
