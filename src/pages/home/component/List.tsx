@@ -1,10 +1,14 @@
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Image, Button } from '@chakra-ui/react'
 import { Key } from 'react'
 import useModeImage from '@/hooks/useModeImage'
+import { useNavigate } from 'react-router-dom'
 
 function List(props: { headerList: any[]; itemList: any[] }) {
   const { priceImgPath } = useModeImage('price')
-
+  const navigate = useNavigate()
+  const jumpToDetail = (row: any) => {
+    navigate(`detail?id=${row.id}`)
+  }
   return (
     <>
       <TableContainer>
@@ -40,10 +44,12 @@ function List(props: { headerList: any[]; itemList: any[] }) {
                 </Td>
                 <Td className="number-base">{item.average}</Td>
                 <Td className="number-base">{item.lowest}</Td>
-                <Td className="flex justify-end">
-                  <Button variant="primary" className="bg-gradient">
-                    Details
-                  </Button>
+                <Td>
+                  <div className="flex items-center justify-end">
+                    <Button variant="primary" className="bg-gradient" onClick={() => jumpToDetail(item)}>
+                      Details
+                    </Button>
+                  </div>
                 </Td>
               </Tr>
             ))}

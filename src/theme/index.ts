@@ -33,6 +33,12 @@ const theme = extendTheme({
           color: 'neutral.900',
           ...brandRing,
         }),
+        outline: (props: Record<string, any>) => ({
+          rounded: '20px',
+          color: 'white',
+          borderRadius: 'red',
+          ...brandRing,
+        }),
       },
     },
   },

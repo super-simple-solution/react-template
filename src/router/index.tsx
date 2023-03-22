@@ -4,6 +4,8 @@ import { RouteObject } from 'react-router-dom'
 
 const Home = lazy(() => import('../pages/home'))
 const About = lazy(() => import('../pages/about'))
+const Borrow = lazy(() => import('../pages/borrow'))
+const Detail = lazy(() => import('../pages/detail'))
 
 import AppLayout from '../layout/index'
 
@@ -27,6 +29,14 @@ export const routers: RouteObject[] = [
       {
         path: '/market',
         element: lazyLoad(<Market />),
+      },
+      {
+        path: '/borrow',
+        element: lazyLoad(<Borrow />),
+      },
+      {
+        path: '/Detail',
+        element: lazyLoad(<Detail />),
       },
     ],
   },

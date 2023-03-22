@@ -52,6 +52,7 @@ export const itemList = [
     fund: '11',
     average: '11',
     lowest: '11',
+    id: 1,
   },
   {
     img: '/src/assets/img.png',
@@ -61,6 +62,7 @@ export const itemList = [
     fund: '11',
     average: '11',
     lowest: '11',
+    id: 2,
   },
   {
     img: '/src/assets/img.png',
@@ -70,6 +72,7 @@ export const itemList = [
     fund: '11',
     average: '11',
     lowest: '11',
+    id: 3,
   },
   {
     img: '/src/assets/img.png',
@@ -79,6 +82,7 @@ export const itemList = [
     fund: '11',
     average: '11',
     lowest: '11',
+    id: 4,
   },
   {
     img: '/src/assets/img.png',
@@ -88,6 +92,7 @@ export const itemList = [
     fund: '11',
     average: '11',
     lowest: '11',
+    id: 5,
   },
   {
     img: '/src/assets/img.png',
@@ -97,5 +102,6 @@ export const itemList = [
     fund: '11',
     average: '11',
     lowest: '11',
+    id: 6,
   },
 ]
