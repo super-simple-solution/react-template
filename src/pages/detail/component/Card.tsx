@@ -59,7 +59,9 @@ function card() {
           </CardBody>
 
           <CardFooter pb={0}>
-            <Button variant="outline">Buy Latte</Button>
+            <Button variant="outline" className="border-gradient">
+              Buy Latte
+            </Button>
             <Button variant="primary" className="bg-gradient">
               Borrow ETH
             </Button>
