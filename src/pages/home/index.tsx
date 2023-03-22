@@ -1,8 +1,9 @@
 import { SimpleGrid } from '@chakra-ui/react'
-import CardItem from './component/Card'
 import { cardList } from './const'
 import { Input, InputGroup, InputLeftElement, Image } from '@chakra-ui/react'
 import { useColorMode } from '@chakra-ui/color-mode'
+import CardItem from './component/Card'
+import List from './component/List'
 
 function Home() {
   const { colorMode } = useColorMode()
@@ -30,7 +31,7 @@ function Home() {
           </InputGroup>
         </div>
         <div className="dash-box mt-24">
-          <div></div>
+          <List></List>
         </div>
       </div>
     </>

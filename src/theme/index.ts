@@ -1,6 +1,5 @@
 // https://github.com/nikolovlazar/egghead-getting-started-with-chakra-ui/blob/lesson-9/src/theme/index.ts
 import { extendTheme } from '@chakra-ui/react'
-import { mode } from '@chakra-ui/theme-tools'
 import { brandRing, borderRadius } from './config'
 
 const theme = extendTheme({
@@ -33,11 +32,6 @@ const theme = extendTheme({
           rounded: '20px',
           ...brandRing,
         }),
-      },
-    },
-    Card: {
-      baseStyle: {
-        borderRadius: '2xl',
       },
     },
   },

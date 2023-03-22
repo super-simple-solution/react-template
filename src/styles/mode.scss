@@ -1,9 +1,12 @@
 @import "./variables.scss";
 
+.dash-box {
+  @apply rounded-2xl p-24 overflow-hidden;
+}
 [data-theme="dark"] {
   color: white;
   background-color: var(--color-neutral-900);
-  .dash-box  {
+  .dash-box {
     background-color: var(--color-neutral-700);
   }
   .chakra-input__group  {
