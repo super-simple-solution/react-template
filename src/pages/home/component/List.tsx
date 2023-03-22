@@ -12,7 +12,7 @@ function List(props: { headerList: any[]; itemList: any[] }) {
           <Thead>
             <Tr>
               {props.headerList.map((item: any, index: Key | null | undefined) => (
-                <Th key={index}>{item}</Th>
+                <Td key={index}>{item}</Td>
               ))}
             </Tr>
           </Thead>

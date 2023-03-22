@@ -4,6 +4,7 @@ import { Input, InputGroup, InputLeftElement, Image } from '@chakra-ui/react'
 import { useColorMode } from '@chakra-ui/color-mode'
 import CardItem from './component/Card'
 import List from './component/List'
+// import Table from '@/components/Table'
 
 function Home() {
   const { colorMode } = useColorMode()
