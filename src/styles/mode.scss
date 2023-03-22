@@ -1,8 +1,9 @@
 @import "./variables.scss";
+
 [data-theme="dark"] {
   color: white;
   background-color: var(--color-neutral-900);
-  .chakra-card  {
+  .dash-box  {
     background-color: var(--color-neutral-700);
   }
   .chakra-input__group  {
@@ -12,10 +13,10 @@
 
 [data-theme="light"] {
   color: var(--color-neutral-900);
-  .chakra-card  {
+  .dash-box {
     background-color: var(--color-neutral-200);
-    .chakra-input__group  {
-      background-color: var(--color-neutral-200);
-    }
+  }
+  .chakra-input__group  {
+    background-color: var(--color-neutral-200);
   }
 }

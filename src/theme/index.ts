@@ -26,9 +26,6 @@ const theme = extendTheme({
     },
   },
   ...borderRadius,
-  styles: {
-    global: (props: { colorMode: string }) => ({}),
-  },
   components: {
     Button: {
       variants: {

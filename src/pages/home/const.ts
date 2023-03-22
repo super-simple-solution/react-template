@@ -1,7 +1,7 @@
-import img1 from '../../assets/deposit.png'
-import img2 from '../../assets/borrow.png'
-import img3 from '../../assets/average-deposit.png'
-import img4 from '../../assets/average-borrow.png'
+import img1 from '../../assets/svg/deposit.svg'
+import img2 from '../../assets/svg/borrow.svg'
+import img3 from '../../assets/svg/average-deposit.svg'
+import img4 from '../../assets/svg/average-borrow.svg'
 export const cardList = [
   {
     img: img1,
