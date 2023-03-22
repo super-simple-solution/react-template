@@ -1,5 +1,5 @@
 import { SimpleGrid } from '@chakra-ui/react'
-import { cardList } from './const'
+import { cardList, headerList, itemList } from './const'
 import { Input, InputGroup, InputLeftElement, Image } from '@chakra-ui/react'
 import { useColorMode } from '@chakra-ui/color-mode'
 import CardItem from './component/Card'
@@ -19,7 +19,7 @@ function Home() {
           <div className="text-2xl-medium">Choose your NFT collateral</div>
           <InputGroup width="auto" className="!rounded-lg">
             <InputLeftElement pointerEvents="none">
-              <Image src={'/src/assets/svg/search.svg'} />
+              <Image src={'/src/assets/svg/search.svg'} width={'16px'} />
             </InputLeftElement>
             <Input
               width="400px"
@@ -31,7 +31,7 @@ function Home() {
           </InputGroup>
         </div>
         <div className="dash-box mt-24">
-          <List></List>
+          <List headerList={headerList} itemList={itemList}></List>
         </div>
       </div>
     </>

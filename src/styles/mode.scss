@@ -3,6 +3,17 @@
 .dash-box {
   @apply rounded-2xl p-24 overflow-hidden;
 }
+tbody tr {
+  @apply font-medium;
+  border-bottom: 1px solid var(--color-neutral-600) !important;
+  &:last-child {
+    border: none !important;
+  }
+}
+thead {
+  @apply text-xs-normal;
+  color: var(--color-neutral-500);
+}
 [data-theme="dark"] {
   color: white;
   background-color: var(--color-neutral-900);
@@ -21,5 +32,11 @@
   }
   .chakra-input__group  {
     background-color: var(--color-neutral-200);
+  }
+  tbody tr {
+    border-bottom: 1px solid var(--color-neutral-300) !important;
+    &:last-child {
+      border: none !important;
+    }
   }
 }

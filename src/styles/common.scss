@@ -46,6 +46,9 @@
   .text-2xl-medium {
     @apply text-2xl font-medium;
   }
+  .number-base { // 36
+    @apply text-base font-bold font-number;
+  }
   .number-4xl { // 36
     @apply text-4xl font-bold font-number;
   }

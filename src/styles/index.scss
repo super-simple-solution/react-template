@@ -12,3 +12,17 @@ body {
     overflow-x: hidden ;
 }
 
+table, th, td, thead, tbody {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+td {
+  padding: 16px 0 !important;
+}
+tr {
+  &:last-child {
+    td {
+      padding-bottom: 0 !important;
+    }
+  }
+}

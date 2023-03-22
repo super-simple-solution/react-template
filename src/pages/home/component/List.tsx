@@ -1,40 +1,53 @@
-import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react'
-function List() {
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Image, Button } from '@chakra-ui/react'
+import { Key } from 'react'
+import useModeImage from '@/hooks/useModeImage'
+
+function List(props: { headerList: any[]; itemList: any[] }) {
+  const { priceImgPath } = useModeImage('price')
+
   return (
     <>
       <TableContainer>
-        <Table variant="simple">
+        <Table variant="unstyled">
           <Thead>
             <Tr>
-              <Th>To convert</Th>
-              <Th>into</Th>
-              <Th isNumeric>multiply by</Th>
+              {props.headerList.map((item: any, index: Key | null | undefined) => (
+                <Th key={index}>{item}</Th>
+              ))}
             </Tr>
           </Thead>
           <Tbody>
-            <Tr>
-              <Td>inches</Td>
-              <Td>millimetres (mm)</Td>
-              <Td isNumeric>25.4</Td>
-            </Tr>
-            <Tr>
-              <Td>feet</Td>
-              <Td>centimetres (cm)</Td>
-              <Td isNumeric>30.48</Td>
-            </Tr>
-            <Tr>
-              <Td>yards</Td>
-              <Td>metres (m)</Td>
-              <Td isNumeric>0.91444</Td>
-            </Tr>
+            {props.itemList.map((item: any, index: Key | null | undefined) => (
+              <Tr key={index}>
+                <Td>
+                  <div className="flex items-center">
+                    <Image src={item.img}></Image>
+                    <div className="ml-16">{item.name}</div>
+                  </div>
+                </Td>
+                <Td className="number-base">{item.nfts}</Td>
+                <Td className="number-base">
+                  <div className="flex items-center">
+                    <img src={priceImgPath} alt="Local Image" />
+                    <div className="ml-6">{item.floor}</div>
+                  </div>
+                </Td>
+                <Td className="number-base">
+                  <div className="flex items-center">
+                    <img src={priceImgPath} alt="Local Image" />
+                    <div className="ml-6">{item.fund}</div>
+                  </div>
+                </Td>
+                <Td className="number-base">{item.average}</Td>
+                <Td className="number-base">{item.lowest}</Td>
+                <Td className="flex justify-end">
+                  <Button variant="primary" className="bg-gradient">
+                    Details
+                  </Button>
+                </Td>
+              </Tr>
+            ))}
           </Tbody>
-          <Tfoot>
-            <Tr>
-              <Th>To convert</Th>
-              <Th>into</Th>
-              <Th isNumeric>multiply by</Th>
-            </Tr>
-          </Tfoot>
         </Table>
       </TableContainer>
     </>

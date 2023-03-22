@@ -30,6 +30,7 @@ const theme = extendTheme({
       variants: {
         primary: (props: Record<string, any>) => ({
           rounded: '20px',
+          color: 'neutral.900',
           ...brandRing,
         }),
       },

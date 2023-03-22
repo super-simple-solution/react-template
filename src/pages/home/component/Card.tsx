@@ -8,7 +8,7 @@ function CardItem({ info }: any) {
           <Image boxSize="16px" src={info.img} />
         </div>
       </CardHeader>
-      <CardBody p="0">
+      <CardBody p="0" mt="6">
         <div className="text-sm-normal">{info.text}</div>
         <div className="number-4xl mt-6 flex">
           <div>{info.value}</div>
