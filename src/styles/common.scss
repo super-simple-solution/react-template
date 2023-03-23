@@ -63,4 +63,14 @@
   .bg-gradient {
     @apply bg-gradient-to-r from-primary-400 to-primary-600; 
   }
+  .outline-gradient {
+    border: 1px solid;
+    border-image: linear-gradient(
+        90deg,
+        var(--color-primary-400) 0%,
+        var(--color-primary-600) 100%,
+      )
+      2 2 2 2;
+    overflow: hidden;
+  }
 }

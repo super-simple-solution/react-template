@@ -28,16 +28,13 @@ const theme = extendTheme({
   components: {
     Button: {
       variants: {
-        primary: (props: Record<string, any>) => ({
-          rounded: '20px',
+        primaryGradient: () => ({
+          borderRadius: '20px',
           color: 'neutral.900',
-          ...brandRing,
-        }),
-        outline: (props: Record<string, any>) => ({
-          rounded: '20px',
-          color: 'white',
-          borderRadius: 'red',
-          ...brandRing,
+          bgGradient: 'linear(to-r, primary.400, primary.600)',
+          _hover: {
+            bgGradient: 'linear(to-r, primary.400, primary.600)',
+          },
         }),
       },
     },
